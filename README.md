@@ -1,8 +1,4 @@
-# Sogeti Testing Automation Framework (STAF)
 
-This is a work in progress.
-
-This document has to be submitted to a review.
 
 ### Table of Contents
 
@@ -545,42 +541,40 @@ public void loginWithCorrectCredentials(String email, String password) {
 
 4. After the run, it would generate a report in the **Testng-output** folder.
 
-# Next Steps
+## Exercises:
+Navigate to the website under test http://automationpractice.com/index.php and automate the following functionalities:
 
-This project can improve and integrate more complex concepts and libraries.
+### Search functionality:
+* Using the POM principles, refactor the Then step from the @search scenario, according to the principles (follow the same rules as already done for the `When`)
+* Convert the already created scenario into a scenario outline so more products can be searched on, at once. What do you experience here?
+* Search for a product that doesn't exist and validate the error message received
+* Use the advanced search functionality (e.g. type "dress" and select from the list of recommendations "Casual Dresses > Printed")
 
-The code also need to be constantly reviewed.
+### Sorting functionality:
+* Check that you can sort based on the prices (lowest to highest)
+* Check that you can sort based on the name of produts from Z-A 
 
-#### Improvements
+### Registration/ Login
+* Register to the website by providing a valid email address and filling in all the mandatory field
+* Check the errror messages received in case mandatory fields are not filled in
+* Validate the error message received in case you try to register with an existing email
+* Try to login with a wrong pair of email/password
+* Login successfully to the website
 
-- Better format for the test data field in Excel or use a different sheet for test data
+### Shopping cart
+* Add a product to a cart and order it successfully by filling in all the required info (as an authenticated user)
+* Add a product to a cart and order it successfully by filling in all the required info (without being authenticated)
 
-- Data to provide in **TestSelenium**
+### Technical improvements for the framework
+* Create html reports while running your scripts
+* Create profiles (cucumber.yml files) that will allow you to run the scripts in various browsers
+* Add extra configuration in the env.rb files for other browsers (e.g. Edge, IE11)
+* In the hooks.rb file add an after hook with allows you to add screenshots in case scenarios fail
+ 
+### Use Jenkins to run your scripts (Advanced)
+* Configure a jenkins agent locally 
+* Create pipelines for various browsers and run the scripts
+* Use the groovy script from pipelines > demo_pipeline as an example on how to configure your pipelines in Jenkins
 
-- Customize the report output
 
-- Better report content for the business
 
-- Write more comments
-
-#### Integrations
-
-- Write real world end to end flow
-
-- Check and use all **BaseMethods**
-
-- Add the **BDD module**
-
-- Continuous Integration with **Jenkins**
-
-- Dependency Injection library
-
-- Unit testing for **FMKCore**
-
-- Custom exceptions that will print snippets of code (test data missing,...)
-
-- Add support multiple versions of chromedriver
-
-#### Reflections
-
-- Data-driven Framework => hybrid Framework (data + keyword) ?
